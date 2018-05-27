@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.paid;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.MenuItem;
 
 import com.example.button.JokeTeller;
 import com.example.jokeactivity.JokeActivity;
-import com.udacity.gradle.builditbigger.free.EndpointAsyncTask;
+import com.udacity.gradle.builditbigger.R;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
