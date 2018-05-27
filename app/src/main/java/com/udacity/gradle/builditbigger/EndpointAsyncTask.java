@@ -2,7 +2,6 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -45,11 +44,5 @@ public class EndpointAsyncTask extends AsyncTask<Context,Void,String> {
             e.printStackTrace();
             return null;
         }
-    }
-
-    @Override
-    protected void onPostExecute(String s) {
-        Toast.makeText(mContext,s,Toast.LENGTH_LONG).show();
-
     }
 }

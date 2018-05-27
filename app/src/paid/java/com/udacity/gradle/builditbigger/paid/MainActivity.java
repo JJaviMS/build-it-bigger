@@ -6,16 +6,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.button.JokeTeller;
 import com.example.jokeactivity.JokeActivity;
+import com.udacity.gradle.builditbigger.EndpointAsyncTask;
 import com.udacity.gradle.builditbigger.R;
+
+import java.util.concurrent.ExecutionException;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 
 public class MainActivity extends AppCompatActivity {
-
 
 
     @Override
@@ -48,12 +49,22 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
     @OnClick(R.id.tell_joke_button)
     public void tellJoke() {
-        String joke = JokeTeller.tellJoker();
-        new EndpointAsyncTask().execute(this);
-        Intent intent = new Intent(this,JokeActivity.class);
-        intent.putExtra(JokeActivity.EXTRA_JOKE,joke);
+        String joke =
+                null;
+        try {
+            joke = new EndpointAsyncTask().execute(this).get();
+        } catch (InterruptedException e) {
+            joke = null;
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            joke = null;
+            e.printStackTrace();
+        }
+        Intent intent = new Intent(this, JokeActivity.class);
+        intent.putExtra(JokeActivity.EXTRA_JOKE, joke);
         startActivity(intent);
     }
 

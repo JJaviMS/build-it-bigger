@@ -6,9 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.button.JokeTeller;
 import com.example.jokeactivity.JokeActivity;
-import com.udacity.gradle.builditbigger.free.EndpointAsyncTask;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -50,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
     }
     @OnClick(R.id.tell_joke_button)
     public void tellJoke() {
-        String joke = JokeTeller.tellJoker();
+        //String joke = JokeTeller.tellJoker();
         new EndpointAsyncTask().execute(this);
         Intent intent = new Intent(this,JokeActivity.class);
-        intent.putExtra(JokeActivity.EXTRA_JOKE,joke);
+        //intent.putExtra(JokeActivity.EXTRA_JOKE,joke);
         startActivity(intent);
     }
 
