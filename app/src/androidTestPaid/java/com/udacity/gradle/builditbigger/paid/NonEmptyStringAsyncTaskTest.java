@@ -1,10 +1,9 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.paid;
 
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
-import com.udacity.gradle.builditbigger.free.EndpointAsyncTask;
-import com.udacity.gradle.builditbigger.free.MainActivity;
+import com.udacity.gradle.builditbigger.EndpointAsyncTask;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -19,11 +18,11 @@ import java.util.concurrent.ExecutionException;
  * @author JJaviMS
  */
 @RunWith(AndroidJUnit4.class)
-public class NonEmptyStringAsyncTaskTest{
-    private static com.udacity.gradle.builditbigger.free.EndpointAsyncTask sEndpointAsyncTask;
+public class NonEmptyStringAsyncTaskTest {
+    private static EndpointAsyncTask sEndpointAsyncTask;
 
     @Rule
-    public ActivityTestRule<MainActivity> mMainActivityActivityTestRule = new ActivityTestRule<>(com.udacity.gradle.builditbigger.free.MainActivity.class);
+    public ActivityTestRule<MainActivity> mMainActivityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
 
     @Before

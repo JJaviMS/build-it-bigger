@@ -38,7 +38,7 @@ public class EndpointAsyncTask extends AsyncTask<Context,Void,String> {
         mContext = pairs[0];
 
         try {
-            return sMyApi.putJoke().execute().getJokes();
+            return sMyApi.getJoke().execute().getJokes();
 
         } catch (IOException e) {
             e.printStackTrace();
